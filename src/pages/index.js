@@ -1,12 +1,18 @@
 import React from 'react'
+import HeroComponent from '../components/HeroComponent';
 // import Link from 'gatsby-link'
-import MenuComponent from '../components/MenuComponent'
+
 const indexPage = ({data}) => {
     console.log("the whole data: ", data)
     return (
 
-        <MenuComponent data={data.allContentfulMenu} img={data.allContentfulLogo}/>
-        
+        <div>
+          <HeroComponent 
+          menuData={data.allContentfulMenu} 
+          logo={data.allContentfulLogo}
+          mainText={data.allContentfulMainText}
+          />
+        </div>
         // <nav>
         //     {data.allContentfulMenu.edges.map((el)=> {<b> console.log(el.node) </b>})}
         //     <p>hello world</p>
@@ -42,6 +48,13 @@ query section1{
 	  		}    
 	    }
 	  }
+  }
+  allContentfulMainText{
+	  edges {
+	    node {
+    	  text      
+      }
+    }
 	}
 }
 `
