@@ -7,28 +7,31 @@ const MenuItem = ({text}) => (
 
 const MenuContainer = styled.div`
   display: block;
+  position: relative;
   height: 84px;
-  width: 80%;
-  position:relative;
-  top: 20px;
+  width: 100%;
   background: #384653;
   margin: auto;
-  // align-items: center;
-  //   justify-content: center;
   border-radius: 3px;
 `
 const LogoImg = styled.img`
-
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  margin-left: 20px;
 `
 
 const MenuComponent = ({data, img}) => {
-  // console.log(img)
-  // console.log('img edges', img.edges[0])
   return(
     <MenuContainer>
       <div >
-      {/* style={{background: 'rebeccapurple',}} */}
           <LogoImg src={img.edges[0].node.img.file.url} height={img.edges[0].node.img.file.details.height} width={img.edges[0].node.img.file.details.width}/>
+
+          {/* <nav>
+            {data.allContentfulMenu.edges.map((el)=> {<b> console.log(el.node) </b>})}
+            <p>hello world</p>
+          </nav> */}
 
           <nav>
             {/* <MenuItem/> */}
@@ -36,6 +39,9 @@ const MenuComponent = ({data, img}) => {
               {/* {data.map((text)=> { */}
                 {/* text */}
               {/* })} */}
+
+
+
             </ul>
           </nav>
         </div>

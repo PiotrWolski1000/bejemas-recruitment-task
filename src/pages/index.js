@@ -1,6 +1,8 @@
 import React from 'react'
 import HeroComponent from '../components/HeroComponent';
-// import Link from 'gatsby-link'
+import WhatWeOfferComponent from '../components/WhatWeOfferComponent';
+
+import Link from 'gatsby-link'
 
 const indexPage = ({data}) => {
     console.log("the whole data: ", data)
@@ -8,10 +10,14 @@ const indexPage = ({data}) => {
 
         <div>
           <HeroComponent 
-          menuData={data.allContentfulMenu} 
-          logo={data.allContentfulLogo}
-          mainText={data.allContentfulMainText}
+            menuData={data.allContentfulMenu} 
+            logo={data.allContentfulLogo}
+            mainText={data.allContentfulMainText}
           />
+
+          <WhatWeOfferComponent
+          />
+
         </div>
         // <nav>
         //     {data.allContentfulMenu.edges.map((el)=> {<b> console.log(el.node) </b>})}
