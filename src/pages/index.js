@@ -1,13 +1,47 @@
 import React from 'react'
-import Link from 'gatsby-link'
+// import Link from 'gatsby-link'
+import MenuComponent from '../components/MenuComponent'
+const indexPage = ({data}) => {
+    console.log("the whole data: ", data)
+    return (
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+        <MenuComponent data={data.allContentfulMenu} img={data.allContentfulLogo}/>
+        
+        // <nav>
+        //     {data.allContentfulMenu.edges.map((el)=> {<b> console.log(el.node) </b>})}
+        //     <p>hello world</p>
+        // </nav>
+    )
+}
 
-export default IndexPage
+export default indexPage
+
+
+export const query = graphql`
+query section1{
+  allContentfulMenu {
+    edges {
+      node {
+        text
+      }
+    }
+  }
+  allContentfulLogo{
+	  edges {
+	    node {
+	  		img {
+        	file{
+            url
+            details{
+              image{
+                width
+                height
+              }
+            }
+          }  
+	  		}    
+	    }
+	  }
+	}
+}
+`
