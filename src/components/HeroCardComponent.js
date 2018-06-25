@@ -41,18 +41,18 @@ const CardTitle = styled.div`
   color: #333333;
   text-transform: uppercase;
   font-weight: bold;
-  margin-left: 5px;
+  margin-left: 20px;
 `
 const CardDescription = styled.div`
   color: #777777;
-  margin-left: 5px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   line-height: 100%;
 `
 
 const CardUnderlineImage = styled.div`
-  margin-left: 5px;
-  // margin-top:10px;
+  margin-left: 20px;
+  margin-right: 20px;
 `
 const Img = styled.img`
   margin: 0;

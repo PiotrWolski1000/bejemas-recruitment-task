@@ -3,6 +3,7 @@ import HeroComponent from '../components/HeroComponent';
 import WhatWeOfferComponent from '../components/WhatWeOfferComponent';
 
 const indexPage = ({data}) => {
+  console.log("all data:" , data)
     return (
 
         <div>
@@ -12,6 +13,7 @@ const indexPage = ({data}) => {
             mainText={data.allContentfulMainText}
             heroCardsData={data.allContentfulHeroSectionCards}
             button={data.allContentfulHeroSectionButton}
+            searchButton={data.allContentfulSearchButtonMenu}
           />
 
           <WhatWeOfferComponent
@@ -20,10 +22,6 @@ const indexPage = ({data}) => {
           />
 
         </div>
-        // <nav>
-        //     {data.allContentfulMenu.edges.map((el)=> {<b> console.log(el.node) </b>})}
-        //     <p>hello world</p>
-        // </nav>
     )
 }
 
@@ -74,35 +72,6 @@ query section1{
       }
     }
   }
-  allContentfulSearchButtonMenu{
-	  edges {
-	    node {
-	  	    loupe {
-	  	      file{
-              url
-              details{
-                image{
-                  width
-                  height
-                }
-              }
-            }
-	  	    }
-    	    circle {
-    	      file{
-              url
-              details{
-                image{
-                  width
-                  height
-                }
-              }
-            }
-    	    }
-	  	   
-      }
-    }
-	}
   allContentfulHeroSectionCards{
 	  edges {
 	    node {
@@ -175,6 +144,23 @@ query section1{
     edges{
       node{
         text
+      }
+    }
+  }
+  allContentfulSearchButtonMenu{
+    edges{
+      node{
+        button{
+          file{
+            url
+            details{
+              image{
+                width
+                height
+              }
+            }
+          }
+        }
       }
     }
   }

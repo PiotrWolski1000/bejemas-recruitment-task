@@ -100,14 +100,14 @@ const ImgUnderlineOverMainText = styled.div`
     position: relative;
     top: 20px;
 `
-const HeroComponent = ({menuData, logo, mainText, heroCardsData, button}) => {
+const HeroComponent = ({menuData, logo, mainText, heroCardsData, button, searchButton}) => {
   return(
     <HeroContainer>
         <HeroWrapper>
             <MenuComponent 
                 data={menuData} 
                 img={logo}
-                button={button}
+                searchButton={searchButton}
             />     
             
             <HeroMainTextContainer>
@@ -115,7 +115,7 @@ const HeroComponent = ({menuData, logo, mainText, heroCardsData, button}) => {
                     <img src={mainText.edges[0].node.underlineImage.file.url}/>
                 </ImgUnderlineOverMainText>
                 <HeroMainText>
-                    {mainText.edges[0].node.text}{/* strongest distribution ever */}
+                    {mainText.edges[0].node.text}
                 </HeroMainText>
             </HeroMainTextContainer>
 
@@ -137,6 +137,7 @@ const HeroComponent = ({menuData, logo, mainText, heroCardsData, button}) => {
             <ButtonWrapper>
                 <HeroSectionButton>
                     {button.edges[0].node.text}
+                    
                 </HeroSectionButton>
             </ButtonWrapper>
 

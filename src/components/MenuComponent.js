@@ -2,69 +2,60 @@ import React from 'react'
 import styled from 'styled-components'
 
 const MenuContainer = styled.div`
-  // display: block;
   
   position: relative;
+  
+  top: -20px;
+
   display: flex;
-  flex-direction: row;
   align-items: center;
-  // font-decoration: capitalize;
-  text-transform: uppercase;
+  justify-content: space-between;
+  
   height: 84px;
   width: 100%;
+
   background: #384653;
-  margin: 0 auto;
   border-radius: 3px;
+  
+  text-transform: uppercase;
 `
 const LogoImg = styled.img`
-    // display: flex;
-    // align-items: center;
-    // position: absolute;
-    // top: 25%;
-    // left: 0%;
-    // margin-left: 20px;
+    padding-left: 20px;
   `
   
-const MenuNavElementsWrapper = styled.div`
-    // position: relative;
-    // width: 100%;
-`
 const MenuNav = styled.nav`
-    // width: 100%;
     display: flex;
-    padding-right: 50px;
-    // justify-content: flex-end;
-    // justify-content: space-around;
-    // align-items: center;
+  
+    align-items: center;
     list-style: none;
     
 `
 const MenuUlATag = styled.a`
-    // display: block;
-    // height: 84px;
-    // width: 150px;
-    // width: 100%;
-    // text-align: center;
     padding-left: 20px
     color: #333333;
     text-decoration: none;
 `
-const MenuUlLiTag = styled.li`
-  height: 100%;
-  width: 100%;
+const ImageSearchButton = styled.img`
+  margin-left: 20px;
+  margin-right: 20px;
 `
-const SearchButton = styled.div`
+
+const ImageSearchButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 `
-const MenuComponent = ({data, img}) => {
-  // console.log("data contentful menu from menu component: ", data)
+const MenuComponent = ({data, img, searchButton}) => {
   return(
-    <MenuContainer>
+    <MenuContainer>    
+      <LogoImg 
+        src={img.edges[0].node.img.file.url} 
+        height={img.edges[0].node.img.file.details.height} 
+        width={img.edges[0].node.img.file.details.width}
+      />
       
-      <LogoImg src={img.edges[0].node.img.file.url} height={img.edges[0].node.img.file.details.height} width={img.edges[0].node.img.file.details.width}/>
-      
-      <MenuNavElementsWrapper>
-        <MenuNav>
+      <MenuNav>
         {
           data.edges.map((el)=> {
             return(
@@ -76,9 +67,16 @@ const MenuComponent = ({data, img}) => {
             )
           })
         }
-        </MenuNav>
-        {/* <SearchButton><img src={} /></SearchButton>             */}
-      </MenuNavElementsWrapper>
+
+        <ImageSearchButtonWrapper>
+          <ImageSearchButton
+            src={searchButton.edges[0].node.button.file.url} 
+            width={searchButton.edges[0].node.button.file.details.image.width}
+            height={searchButton.edges[0].node.button.file.details.image.height}
+          />
+        </ImageSearchButtonWrapper>
+
+      </MenuNav>
     </MenuContainer>
   )
 }

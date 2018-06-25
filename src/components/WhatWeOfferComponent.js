@@ -34,7 +34,16 @@ const WhatWeOfferCardsContainer = styled.div`
   display: grid;
   grid: auto / auto auto;
 
-   height: 600px;
+  height: 600px;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 `
 
 const WhatWeOfferWrapper = styled.div`
