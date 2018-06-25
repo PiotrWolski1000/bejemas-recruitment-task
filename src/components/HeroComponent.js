@@ -56,11 +56,12 @@ const HeroCardsWrapper = styled.div`
     display: flex;
     // flex-direction: column;//ciekawe-rodzic powinien miec space-between
     
-    // width: 60%;
+    width: 60%;
+    // max-width: 60%;
     margin: auto;
 
-    justify-content: center;
-    align-items: center;
+    // justify-content: space-around;
+    // align-items: space-between;
     
 `
 const HeroCardsMainWrapper = styled.div`
@@ -70,6 +71,7 @@ const HeroCardsMainWrapper = styled.div`
 
     display: flex;
     justify-content: space-between;//chyba tak
+    items-align: center;
 `
 const HeroSectionButton = styled.div`
     display: flex;

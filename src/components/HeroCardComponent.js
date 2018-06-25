@@ -2,21 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SingleCardContainer = styled.div`
-  // display: block;
-  // display: inline;
-  // width: 100%;
-  
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  
 
-  background: red;
-  // width: 60%;
-  width: 360px;
-  // height: 400px;-to chyba powodowalo wychodzenie tekstu za diva przy skalowaniu
-
+  width: 90%;
 `
 const UpperSection = styled.div`
   display: flex;
@@ -27,18 +16,20 @@ const UpperSection = styled.div`
   height: 215px;
 `
 const BottomSectionWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 `
 const BottomSection = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background: #ffffff;
   height: 185px; 
 
   font-size: 16px;
   text-align: justify;
+  justify-content: space-around;
 `
 const ReadMoreImage = styled.img`
   padding: 0;
@@ -61,19 +52,21 @@ const CardDescription = styled.div`
 
 const CardUnderlineImage = styled.div`
   margin-left: 5px;
+  // margin-top:10px;
 `
 const Img = styled.img`
   margin: 0;
   padding: 0;
 `
 const Wrapper = styled.div`
-width: 100%;
-height: 50px;
-background:red;
-display: block;
+  width: 100%;
+  height: 100%;
 
-// display: flex;
-// flex-direction: column;
+  display: flex;
+  // justify-content: space-around;
+  justify-content: space-around;
+
+  // align-items: space-between;
 `
 
 const HeroCardComponent = ({heroCardData}) => {
