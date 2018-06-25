@@ -11,6 +11,7 @@ const indexPage = ({data}) => {
             logo={data.allContentfulLogo}
             mainText={data.allContentfulMainText}
             heroCardsData={data.allContentfulHeroSectionCards}
+            button={data.allContentfulHeroSectionButton}
           />
 
           <WhatWeOfferComponent
@@ -58,7 +59,18 @@ query section1{
   allContentfulMainText{
 	  edges {
 	    node {
-    	  text      
+    	  text  
+        underlineImage{
+            file{
+              url
+              details{
+                image{
+                  width
+                  height
+                }
+              }
+            }
+          }
       }
     }
   }
@@ -156,6 +168,13 @@ query section1{
             }
           }
         }
+      }
+    }
+  }
+  allContentfulHeroSectionButton{
+    edges{
+      node{
+        text
       }
     }
   }

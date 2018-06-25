@@ -16,8 +16,12 @@ const SingleCardContent = styled.div`
     flex-direction: column;
 `
 const ImageCardContent = styled.div`
-    display: block;
-    width: 50%;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 40%;
     height: 100%;
     margin: auto;
 `
@@ -27,6 +31,17 @@ const CardImage = styled.img`
     // justify-content: center;
     margin: auto;
 `
+const DescriptionCardOffer = styled.div`
+    color: #777777;
+    text-align: justify;
+`
+const TitleCardOffer = styled.div`
+    color: #333333;
+    font-weight: bold;
+    text-transform: uppercase;
+
+`
+
 
 const WhatWeOfferCardComponent = ({data}) => {
   return(
@@ -39,8 +54,8 @@ const WhatWeOfferCardComponent = ({data}) => {
             />
         </ImageCardContent>
         <SingleCardContent>
-            <b>{data.node.title}</b>
-            <p>{data.node.description}</p>
+            <TitleCardOffer>{data.node.title}</TitleCardOffer>
+            <DescriptionCardOffer>{data.node.description}</DescriptionCardOffer>
         </SingleCardContent>
     </SingleCardContainer>    
   )

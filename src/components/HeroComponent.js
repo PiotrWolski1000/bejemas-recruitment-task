@@ -7,7 +7,7 @@ import HeroCardComponent from '../components/HeroCardComponent'
 const HeroContainer = styled.div`
     position: relative;
     background: #173044;
-    height: 850px;
+    height: 1050px;
 `
 
 const HeroWrapper = styled.div`
@@ -40,25 +40,78 @@ const HeroMainText = styled.h1`
 `
 
 const DarkBackground = styled.div`
-    display: block;
     position: absolute;
     bottom: 0px;
+    
     border-top: 1px solid #263d50;
     width: 100%;
-    background: #1b2936;
     height: 330px;
+    display: flex;
+    flex-direction: column;
+
+    background: #1b2936;
 `
-const HeroComponent = ({menuData, logo, mainText, heroCardsData}) => {
-    // console.log("menu data: ", menuData)
+const HeroCardsWrapper = styled.div`
+    position: relative;
+    display: flex;
+    // flex-direction: column;//ciekawe-rodzic powinien miec space-between
+    
+    // width: 60%;
+    margin: auto;
+
+    justify-content: center;
+    align-items: center;
+    
+`
+const HeroCardsMainWrapper = styled.div`
+    width: 100%;
+    position: absolute;
+    top: -215px;
+
+    display: flex;
+    justify-content: space-between;//chyba tak
+`
+const HeroSectionButton = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 215px;
+    height: 60px;
+    background: #FDC300;
+
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    bottom: 50px;
+
+    border-radius: 50px ;
+`
+const ButtonWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+`
+const ImgUnderlineOverMainText = styled.div`
+    position: relative;
+    top: 20px;
+`
+const HeroComponent = ({menuData, logo, mainText, heroCardsData, button}) => {
   return(
     <HeroContainer>
         <HeroWrapper>
             <MenuComponent 
                 data={menuData} 
                 img={logo}
+                button={button}
             />     
             
             <HeroMainTextContainer>
+                <ImgUnderlineOverMainText>
+                    <img src={mainText.edges[0].node.underlineImage.file.url}/>
+                </ImgUnderlineOverMainText>
                 <HeroMainText>
                     {mainText.edges[0].node.text}{/* strongest distribution ever */}
                 </HeroMainText>
@@ -67,14 +120,27 @@ const HeroComponent = ({menuData, logo, mainText, heroCardsData}) => {
         </HeroWrapper>
             
         <DarkBackground>
-            {
-                heroCardsData.edges.map((cardData) => {
-                    return(
-                        <HeroCardComponent key={cardData.node.title} heroCardData={cardData}/>
-                    )
-                })
-            }
+            <HeroCardsMainWrapper>
+                <HeroCardsWrapper>
+                {
+                    heroCardsData.edges.map((cardData) => {
+                        return(
+                            <HeroCardComponent key={cardData.node.title} heroCardData={cardData}/>
+                        )
+                    })
+                }
+                </HeroCardsWrapper>
+            </HeroCardsMainWrapper>
+
+            <ButtonWrapper>
+                <HeroSectionButton>
+                    {button.edges[0].node.text}
+                </HeroSectionButton>
+            </ButtonWrapper>
+
         </DarkBackground>
+
+    
     </HeroContainer>
   )
 }
