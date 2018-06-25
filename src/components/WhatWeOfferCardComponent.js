@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 const SingleCardContainer = styled.div`
     display: flex;
+    justify-content: center;
+
     padding: 10px;
     background: #fcfcfc;
     margin: auto;
@@ -10,12 +12,13 @@ const SingleCardContainer = styled.div`
     height: 180px;
     font-size: 12px;
 
+
 `
 const SingleCardContent = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
-    jusitfy-content: center;
+    justify-content: center;
 `
 const ImageCardContent = styled.div`
     display: flex;
@@ -36,6 +39,8 @@ const DescriptionCardOffer = styled.div`
     color: #777777;
     text-align: justify;
     line-height: 140%;
+    
+    
 `
 const TitleCardOffer = styled.div`
     padding: 0px 10px

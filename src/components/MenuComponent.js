@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const MenuContainer = styled.div`
   
-  position: relative;
+  // position: relative;
   
-  top: -20px;
+  // top: -20px;
 
   display: flex;
   align-items: center;
@@ -32,8 +32,24 @@ const MenuNav = styled.nav`
 `
 const MenuUlATag = styled.a`
     padding-left: 20px
-    color: #333333;
+    color: #333333;650
     text-decoration: none;
+    font-size: 14px;
+
+    
+    @media (max-width: 1442px) {
+      padding-left: 5px;
+    }
+
+    @media (max-width: 1100px) {
+      font-size: 12px;
+    }
+    
+    @media (max-width: 700px) {
+      font-size: 8px;
+    }
+
+
 `
 const ImageSearchButton = styled.img`
   margin-left: 20px;

@@ -30,6 +30,17 @@ const BottomSection = styled.div`
   font-size: 16px;
   text-align: justify;
   justify-content: space-around;
+
+    
+  @media (max-width: 650px) {
+    font-size: 10px;
+  }
+
+    
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
+
 `
 const ReadMoreImage = styled.img`
   padding: 0;
@@ -42,6 +53,7 @@ const CardTitle = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 20px;
+  
 `
 const CardDescription = styled.div`
   color: #777777;
@@ -63,10 +75,9 @@ const Wrapper = styled.div`
   height: 100%;
 
   display: flex;
-  // justify-content: space-around;
   justify-content: space-around;
 
-  // align-items: space-between;
+  align-items: space-between;
 `
 
 const HeroCardComponent = ({heroCardData}) => {
