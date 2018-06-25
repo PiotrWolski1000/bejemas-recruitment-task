@@ -2,6 +2,7 @@ import React from 'react'
 // import Link from 'gatsby-link'
 import styled from 'styled-components'
 import MenuComponent from '../components/MenuComponent'
+import HeroCardComponent from '../components/HeroCardComponent'
 
 const HeroContainer = styled.div`
     position: relative;
@@ -41,20 +42,19 @@ const HeroMainText = styled.h1`
 const DarkBackground = styled.div`
     display: block;
     position: absolute;
-    bottom: -165px;
-
+    bottom: 0px;
     border-top: 1px solid #263d50;
     width: 100%;
     background: #1b2936;
     height: 330px;
 `
-const HeroComponent = ({menuData, logo, mainText}) => {
-    // console.log(mainText.edges[0])
+const HeroComponent = ({menuData, logo, mainText, heroCardsData}) => {
+    // console.log("menu data: ", menuData)
   return(
     <HeroContainer>
         <HeroWrapper>
             <MenuComponent 
-                data={menuData.menuData} 
+                data={menuData} 
                 img={logo}
             />     
             
@@ -67,6 +67,13 @@ const HeroComponent = ({menuData, logo, mainText}) => {
         </HeroWrapper>
             
         <DarkBackground>
+            {
+                heroCardsData.edges.map((cardData) => {
+                    return(
+                        <HeroCardComponent key={cardData.node.title} heroCardData={cardData}/>
+                    )
+                })
+            }
         </DarkBackground>
     </HeroContainer>
   )

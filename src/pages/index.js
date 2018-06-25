@@ -2,10 +2,7 @@ import React from 'react'
 import HeroComponent from '../components/HeroComponent';
 import WhatWeOfferComponent from '../components/WhatWeOfferComponent';
 
-import Link from 'gatsby-link'
-
 const indexPage = ({data}) => {
-    console.log("the whole data: ", data)
     return (
 
         <div>
@@ -13,9 +10,12 @@ const indexPage = ({data}) => {
             menuData={data.allContentfulMenu} 
             logo={data.allContentfulLogo}
             mainText={data.allContentfulMainText}
+            heroCardsData={data.allContentfulHeroSectionCards}
           />
 
           <WhatWeOfferComponent
+            cards={data.allContentfulWhatWeOfferCards}
+            mainInfo={data.allContentfulWhatWeOfferSection}
           />
 
         </div>
@@ -61,6 +61,103 @@ query section1{
     	  text      
       }
     }
+  }
+  allContentfulSearchButtonMenu{
+	  edges {
+	    node {
+	  	    loupe {
+	  	      file{
+              url
+              details{
+                image{
+                  width
+                  height
+                }
+              }
+            }
+	  	    }
+    	    circle {
+    	      file{
+              url
+              details{
+                image{
+                  width
+                  height
+                }
+              }
+            }
+    	    }
+	  	   
+      }
+    }
 	}
+  allContentfulHeroSectionCards{
+	  edges {
+	    node {
+	  	    title
+        	description
+	  	   	underlineImage{
+            file{
+              url
+              details{
+                image{
+                  width
+                  height
+                }
+              }
+            } 
+          }
+        readMoreImage{
+          file{
+            url
+            details{
+              image{
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  allContentfulWhatWeOfferCards{
+    edges{
+      node{
+        title
+        description
+        img{
+          file{
+            url
+            details{
+              image{
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  allContentfulWhatWeOfferSection{
+    edges{
+      node{
+        title
+        subtitle
+        underlineImageWhatWeOffer{
+          file{
+            url
+            details{
+              image{
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 `
