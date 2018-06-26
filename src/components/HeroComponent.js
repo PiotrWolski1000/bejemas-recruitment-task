@@ -66,6 +66,7 @@ const HeroCardsMainWrapper = styled.div`
     top: -215px;
 
     display: flex;
+    f;ex-direction: row-reverse;
     justify-content: space-between;//chyba tak
     items-align: center;
 `

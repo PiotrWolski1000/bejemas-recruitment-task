@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const SingleCardContainer = styled.div`
   display: flex;
+
   flex-direction: column;
 
   width: 90%;
