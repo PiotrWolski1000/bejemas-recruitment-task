@@ -3,7 +3,6 @@ import HeroComponent from '../components/HeroComponent';
 import WhatWeOfferComponent from '../components/WhatWeOfferComponent';
 
 const indexPage = ({data}) => {
-  console.log("all data:" , data)
     return (
 
         <div>

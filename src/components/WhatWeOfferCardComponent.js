@@ -1,55 +1,43 @@
 import React from 'react'
 import styled from 'styled-components'
+import {device} from './device'
 
 const SingleCardContainer = styled.div`
+    margin: 20px 0;
     display: flex;
-    justify-content: center;
-
-    padding: 10px;
     background: #fcfcfc;
-    margin: auto;
-    width: 360px;
     height: 180px;
     font-size: 12px;
 
+    @media ${device.laptop} { 
+        margin: 40px 0px;
+      }
 
 `
 const SingleCardContent = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 `
 const ImageCardContent = styled.div`
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-    width: 40%;
-    height: 100%;
-`
-const CardImage = styled.img`
-    display: flex;  
-    align-items: center;
-    justify-content: flex-start;
+    justify-content: center; 
 `
 const DescriptionCardOffer = styled.div`
-    padding: 0px 10px
     padding-top: 10px;
     color: #777777;
     text-align: justify;
     line-height: 140%;
-    
-    
+    padding-right: 20px    
 `
 const TitleCardOffer = styled.div`
-    padding: 0px 10px
-    
     color: #333333;
     font-weight: bold;
     font-size: 16px;
     text-transform: capitalize;
-
 `
 
 
@@ -57,7 +45,7 @@ const WhatWeOfferCardComponent = ({data}) => {
   return(
     <SingleCardContainer>
         <ImageCardContent>
-            <CardImage
+            <img
                 src = {data.node.img.file.url}
                 width = {data.node.img.file.details.width}
                 height = {data.node.img.file.details.height}    

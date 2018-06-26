@@ -1,13 +1,15 @@
 import React from 'react'
-// import Link from 'gatsby-link'
 import styled from 'styled-components'
 import MenuComponent from '../components/MenuComponent'
 import HeroCardComponent from '../components/HeroCardComponent'
+import {device} from './device'
 
 const HeroContainer = styled.div`
     position: relative;
     background: #173044;
     height: 1050px;
+
+
 `
 
 const HeroWrapper = styled.div`
@@ -16,28 +18,23 @@ const HeroWrapper = styled.div`
     position: relative;
 
     flex-direction: column;
-    justify-content: flex-end;
-
+    justify-content: space-around;
+    
     margin: 0 auto;
 
     height: 330px;
     width: 60%;
 `
-const HeroMainTextContainer = styled.div`    
-    width: 100%;
-`
-    
-const HeroMainText = styled.h1`
-    display: block;
 
+const HeroMainText = styled.h1`
+    word-spacing: 100vw;
+    display: block;
     top: 50px;
-    width: 40%;
     text-decoration: justify;
     text-transform: uppercase;
     color:white;
-    
-    line-height: 95%;
 `
+
 
 const DarkBackground = styled.div`
     position: absolute;
@@ -54,15 +51,9 @@ const DarkBackground = styled.div`
 const HeroCardsWrapper = styled.div`
     position: relative;
     display: flex;
-    // flex-direction: column;//ciekawe-rodzic powinien miec space-between
     
     width: 60%;
-    // max-width: 60%;
-    margin: auto;
-
-    // justify-content: space-around;
-    // align-items: space-between;
-    
+    margin: auto;    
 `
 const HeroCardsMainWrapper = styled.div`
     width: 100%;
@@ -87,6 +78,7 @@ const HeroSectionButton = styled.div`
     font-size: 14px;
     font-weight: bold;
 
+    user-select: none;
     position: absolute;
     bottom: 50px;
 
@@ -111,15 +103,14 @@ const HeroComponent = ({menuData, logo, mainText, heroCardsData, button, searchB
                 searchButton={searchButton}
             />     
             
-            <HeroMainTextContainer>
+            
                 <ImgUnderlineOverMainText>
                     <img src={mainText.edges[0].node.underlineImage.file.url}/>
                 </ImgUnderlineOverMainText>
                 <HeroMainText>
                     {mainText.edges[0].node.text}
                 </HeroMainText>
-            </HeroMainTextContainer>
-
+            
         </HeroWrapper>
             
         <DarkBackground>

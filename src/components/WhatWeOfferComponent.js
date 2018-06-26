@@ -1,7 +1,7 @@
 import React from 'react'
 import WhatWeOfferCardComponent from './WhatWeOfferCardComponent'
 import styled from 'styled-components'
-
+import {device} from './device'
 const WhatWeOfferContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -34,16 +34,12 @@ const WhatWeOfferCardsContainer = styled.div`
   display: grid;
   grid: auto / auto auto;
 
-  height: 600px;
-
   @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: space-around;
   }
-
-
 `
 
 const WhatWeOfferWrapper = styled.div`

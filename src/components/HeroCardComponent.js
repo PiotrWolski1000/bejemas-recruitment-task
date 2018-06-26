@@ -15,11 +15,6 @@ const UpperSection = styled.div`
   width: 100%;
   height: 215px;
 `
-const BottomSectionWrapper = styled.div`
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-`
 const BottomSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,40 +26,34 @@ const BottomSection = styled.div`
   text-align: justify;
   justify-content: space-around;
 
-    
   @media (max-width: 650px) {
     font-size: 10px;
   }
 
-    
   @media (max-width: 1100px) {
     font-size: 12px;
   }
-
 `
 const ReadMoreImage = styled.img`
   padding: 0;
   margin: 0;
-  cursor: pointer;
- 
+  cursor: pointer; 
 `
 
 const CardTitle = styled.div`
   color: #333333;
   text-transform: uppercase;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 10px;
   line-height: 100%;
   
   @media (max-width: 500px) {
     font-size: 10px;
   }
-  
 `
 const CardDescription = styled.div`
   color: #777777;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 10px;
   line-height: 100%;
 
   @media (max-width: 500px) {
@@ -74,13 +63,11 @@ const CardDescription = styled.div`
   @media (max-width: 720px) {
     font-size: 9px;
   }
-  
-
 `
 
 const CardUnderlineImage = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  // margin-right: 20px;
 `
 const Img = styled.img`
   margin: 0;
@@ -97,15 +84,12 @@ const Wrapper = styled.div`
 `
 
 const HeroCardComponent = ({heroCardData}) => {
-    // console.log("single card component data: ", heroCardData)
-    // console.log(heroCardData.node.underlineImage.file.url)
   return(
     <Wrapper>
       <SingleCardContainer>
         <UpperSection>
           <ReadMoreImage src={heroCardData.node.readMoreImage.file.url}/>
         </UpperSection>
-        <BottomSectionWrapper>
           <BottomSection>
             <CardUnderlineImage>
               <Img src={heroCardData.node.underlineImage.file.url}/>
@@ -114,7 +98,6 @@ const HeroCardComponent = ({heroCardData}) => {
             <CardDescription> <p>{heroCardData.node.description} </p></CardDescription>
             
           </BottomSection>
-        </BottomSectionWrapper>
       </SingleCardContainer> 
     </Wrapper>   
   )
