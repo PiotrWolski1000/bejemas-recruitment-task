@@ -12,13 +12,13 @@ const WhatWeOfferContainer = styled.div`
 
 `
 const Main = styled.div`
-margin-top: 50px;
+  margin-top: 50px;
 
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-text-align: center;
+  text-align: center;
 `
 const H2Tag = styled.h2`
   color: #333333;

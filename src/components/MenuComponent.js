@@ -20,8 +20,8 @@ const MenuContainer = styled.div`
   text-transform: uppercase;
 `
 const LogoImg = styled.img`
-    padding-left: 20px;
-  `
+  margin: 0 20px;  
+`
   
 const MenuNav = styled.nav`
     display: flex;
@@ -31,12 +31,13 @@ const MenuNav = styled.nav`
     
 `
 const MenuUlATag = styled.a`
-    padding-left: 20px
-    color: #333333;650
+    // padding-left: 20px
+    color: #333333;
     text-decoration: none;
     font-size: 14px;
 
-    
+    margin: 0 5px;
+
     @media (max-width: 1442px) {
       padding-left: 5px;
     }
@@ -52,8 +53,8 @@ const MenuUlATag = styled.a`
 
 `
 const ImageSearchButton = styled.img`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
+  cursor: pointer;
 `
 
 const ImageSearchButtonWrapper = styled.div`
@@ -89,8 +90,10 @@ const MenuComponent = ({data, img, searchButton}) => {
             src={searchButton.edges[0].node.button.file.url} 
             width={searchButton.edges[0].node.button.file.details.image.width}
             height={searchButton.edges[0].node.button.file.details.image.height}
-          />
-        </ImageSearchButtonWrapper>
+        />
+        
+          </ImageSearchButtonWrapper>
+      
 
       </MenuNav>
     </MenuContainer>

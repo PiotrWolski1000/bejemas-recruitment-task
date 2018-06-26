@@ -94,6 +94,7 @@ const HeroSectionButton = styled.div`
 `
 const ButtonWrapper = styled.div`
     display: flex;
+    cursor: pointer;
     justify-content: center;
 `
 const ImgUnderlineOverMainText = styled.div`

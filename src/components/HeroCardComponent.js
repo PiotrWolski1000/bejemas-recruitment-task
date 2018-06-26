@@ -45,6 +45,7 @@ const BottomSection = styled.div`
 const ReadMoreImage = styled.img`
   padding: 0;
   margin: 0;
+  cursor: pointer;
  
 `
 
@@ -53,6 +54,11 @@ const CardTitle = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   margin-left: 20px;
+  line-height: 100%;
+  
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
   
 `
 const CardDescription = styled.div`
@@ -60,6 +66,16 @@ const CardDescription = styled.div`
   margin-left: 20px;
   margin-right: 20px;
   line-height: 100%;
+
+  @media (max-width: 500px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 9px;
+  }
+  
+
 `
 
 const CardUnderlineImage = styled.div`
