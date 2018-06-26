@@ -33,6 +33,11 @@ const HeroMainText = styled.h1`
     text-decoration: justify;
     text-transform: uppercase;
     color:white;
+
+    @media (max-width: 425px){
+        font-size: 28px;
+    }
+
 `
 
 
@@ -83,6 +88,30 @@ const HeroSectionButton = styled.div`
     bottom: 50px;
 
     border-radius: 50px ;
+
+    @media (max-width: 320px){
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    @media (max-width: 425px){
+        width: 125px;
+        height: 35px;
+        font-size: 10px;
+    }
+
+    @media (max-width: 768px){
+        width: 150px;
+        height: 45px;
+        font-size: 10px;
+    }
+
+    @media (max-width: 1024px){
+        width: 175px;
+        height: 55px;
+        font-size: 10px;
+    }
 `
 const ButtonWrapper = styled.div`
     display: flex;
@@ -101,15 +130,15 @@ const HeroComponent = ({menuData, logo, mainText, heroCardsData, button, searchB
                 data={menuData} 
                 img={logo}
                 searchButton={searchButton}
-            />     
+            />   
+
+            <ImgUnderlineOverMainText>
+                <img src={mainText.edges[0].node.underlineImage.file.url}/>
+            </ImgUnderlineOverMainText>
             
-            
-                <ImgUnderlineOverMainText>
-                    <img src={mainText.edges[0].node.underlineImage.file.url}/>
-                </ImgUnderlineOverMainText>
-                <HeroMainText>
-                    {mainText.edges[0].node.text}
-                </HeroMainText>
+            <HeroMainText>
+                {mainText.edges[0].node.text}
+            </HeroMainText>
             
         </HeroWrapper>
             

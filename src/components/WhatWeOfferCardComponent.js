@@ -12,6 +12,11 @@ const SingleCardContainer = styled.div`
     @media ${device.laptop} { 
         margin: 40px 0px;
       }
+    
+    @media (max-width: 320px){
+        margin: 80px 0px;
+    }
+
 
 `
 const SingleCardContent = styled.div`

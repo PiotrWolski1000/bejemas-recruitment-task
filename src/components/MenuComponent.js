@@ -94,12 +94,17 @@ const HamLabel = styled.label`
 
   @media (max-width: 1024px) {
     display: block;
-    padding-right: 20px;
+    // padding-right: 20px;
     cursor: pointer;
   }
-  @media (max-width: 768px){
-    padding-right: 40px;  
+
+  @media (min-width: 320px){
+    padding-right: 0;
   }
+
+  // @media (max-width: 768px){
+  //   // padding-right: 40px;  
+  // }
 `
 
 

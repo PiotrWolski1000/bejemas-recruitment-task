@@ -50,6 +50,14 @@ const CardTitle = styled.div`
   @media (max-width: 500px) {
     font-size: 10px;
   }
+
+  @media (max-width: 320px){
+    font-size: 7px;
+    margin-left: 5px;
+  }
+
+  
+
 `
 const CardDescription = styled.div`
   color: #777777;
@@ -63,6 +71,12 @@ const CardDescription = styled.div`
   @media (max-width: 720px) {
     font-size: 9px;
   }
+
+  @media (max-width: 320px){
+    font-size: 6px;
+    margin-left: 5px;
+  }
+
 `
 
 const CardUnderlineImage = styled.div`
